@@ -1,0 +1,89 @@
+.vbox {
+  display: flex; //this is only for children
+  flex-direction: column;
+}
+
+.hbox {
+  display: flex; //this is only for children
+  flex-direction: row;
+}
+
+.flow1 {
+  flex: 1;
+}
+
+.flow0 {
+  flex: 0;
+}
+
+.flow-start {
+  justify-content: flex-start;
+}
+
+.flow-end {
+  justify-content: flex-end;
+}
+
+.ebb-start {
+  align-items: flex-start;
+}
+
+.ebb-stretch {
+  align-items: stretch;
+}
+
+.iebb-start {
+  align-self: flex-start;
+}
+
+.iebb-stretch {
+  align-self: stretch;
+}
+
+//justify: flex-start | flex-end | center | space-between | space-around;
+//align-items: flex-start | flex-end | center | baseline | stretch;
+
+
+
+html {
+  width: 100%;
+  height: 100%;
+  @extend .vbox;
+
+  body {
+    @extend .vbox;
+    @extend .flow1;
+    font-family: 'Roboto', sans-serif;
+
+    .body-content {
+      @extend .vbox;
+      @extend .flow1;
+    }
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.home {
+  // @extend .iebb-stretch;
+  // @extend .flow1;
+  // @extend .vbox;
+  background: #263238;
+  // color: #C8C8C8;
+
+  #diagramDiv {
+    width: 100%;
+    height: 100%;
+  }
+
+  .button-bar {
+    z-index: 3; //canvas is 2, so go over
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
